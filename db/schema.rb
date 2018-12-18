@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2018_12_18_190318) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "images", force: :cascade do |t|
     t.text "url"
-    t.integer "region_id"
+    t.bigint "region_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["region_id"], name: "index_images_on_region_id"
@@ -29,4 +32,5 @@ ActiveRecord::Schema.define(version: 2018_12_18_190318) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "images", "regions"
 end
