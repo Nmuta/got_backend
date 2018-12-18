@@ -19,3 +19,22 @@ rake db:create
 rake db:migrate
 
 rails s
+
+
+///
+
+once the app is up and running add regions at
+
+```
+/regions
+```
+
+and add fake image urls at
+
+```
+/images
+```
+
+/images takes a url and an integer for the associated record.
+
+this is a quick and dirty api ! 
