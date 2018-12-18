@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
 
   def index
-    resource = params["name"];
+    resource = params["name"].downcase;
 
-    found = Region.where("name like ? ", "%#{resource}%")
+    found = Region.where("LOWER(name) like ? ", "%#{resource}%")
 
     if (found)
       @regions = found.first

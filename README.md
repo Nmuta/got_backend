@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+simple backend api for Angular 7 project
 
-Things you may want to cover:
 
-* Ruby version
+api end point students will be targeting is /get_region/:region_name
 
-* System dependencies
+where :region_name is winterfell , essos, etc.
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+to get started, do the following in home directory of this project:
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+bundle_install
 
-* Deployment instructions
+rake db:create
 
-* ...
+rake db:migrate
+
+rails s
