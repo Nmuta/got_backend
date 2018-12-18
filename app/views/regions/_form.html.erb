@@ -1,0 +1,44 @@
+<%= form_with(model: region, local: true) do |form| %>
+  <% if region.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(region.errors.count, "error") %> prohibited this region from being saved:</h2>
+
+      <ul>
+      <% region.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :spoiler %>
+    <%= form.text_area :spoiler %>
+  </div>
+
+  <div class="field">
+    <%= form.label :show_spoiler %>
+    <%= form.check_box :show_spoiler %>
+  </div>
+
+  <%= form.fields_for :images, Image.new do |image_form| %>
+  asdf
+    <p>
+        Image: <%= image_form.text_field :url %>
+    </p>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
